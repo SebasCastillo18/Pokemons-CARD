@@ -18,17 +18,21 @@
     background: #000;
     color: rgb(255, 255, 255);
 }
+.Home_form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+    justify-items: center;
+    padding: 100px 10px;
+    gap: 5px;
+}
 
 .Home_input {
     display: flex;
-    border: 2px solid rgb(103, 104, 107);
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
     padding: 10px 15px;
     width: 320px;
     max-width: 1000px;
@@ -54,16 +58,7 @@
     background: rgb(252, 67, 67);
 }
 
-.Home_form {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    justify-content: center;
-    justify-items: center;
-    padding: 100px 10px;
-    gap: 5px;
-}
+
 
 .Home_text {
     color: rgb(0, 0, 0);

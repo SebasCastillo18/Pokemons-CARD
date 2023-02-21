@@ -8,6 +8,13 @@ const Pokemon = () => {
 
   const { id } = useParams();
 
+  const getPercenBar = (stat) => {
+
+    const percent = (stat * 100) / 255;
+    return `${percent}%`
+
+  };
+
   useEffect(() => {
     const URL = `https://pokeapi.co/api/v2/pokemon/${id}/`;
 
@@ -18,7 +25,7 @@ const Pokemon = () => {
   }, []);
 
   return (
-    <main>
+    <main className="pokemon_main">
       <section>
         <section
           className={`Pokemon_content bg-lg-${pokemon?.types[0].type.name}`}
@@ -66,7 +73,7 @@ const Pokemon = () => {
             className={`Pokemon-content-abilities bg-lg-${pokemon?.types[0].type.name}`}
           >
             <h3 className="Pokemon_title">Abilities</h3>
-            <div className="Pokemon_type-container">
+            <div className="Pokemon_type-container-2">
               {pokemon?.abilities.map((ability) => (
                 <div key={ability.ability.name}>
                   <span>{ability.ability.name}</span>
@@ -76,19 +83,19 @@ const Pokemon = () => {
           </div>
         </div>
 
-        <section>
-          <h2 className="pokemon_stats">Stats</h2>
-          <section className="pokemon_container-stats">
+        <section className="pokemon_stats">
+          <h2 className="pokemon_stats-title">Stats</h2>
+          <section className="pokemon_stats_info">
             {pokemon?.stats.map((stat) => (
-              <article key={stat.stat.name}>
-                <div className="pokemon_type-stats">
-                  <h4 className="pokemon_type-number">{stat.stat.name}</h4>
-                  <h5 className="pokemon_type-number">{stat.base_stat}/150</h5>
+              <article className="pokemon_stat" key={stat.stat.name}>
+                <div className="pokemon_stat-header">
+                  <h4 className="pokemon_stat-name">{stat.stat.name}</h4>
+                  <h5 className="pokemon_stat-value">{stat.base_stat}/255</h5>
 
                 </div>
-                <div className="pokemon_box-content">
-                  <div>
-                    <div style={{ background: "red", width: "5px", height: "15px" }}></div>
+                <div className="pokemon_stat-bar">
+                  <div className="pokemon_stat-barGray">
+                    <div className="pokemon_stat-barProgress" style={{width: getPercenBar(stat.base_stat)}}></div>
                   </div>
                 </div>
               </article>

@@ -71,10 +71,24 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+.Pokemon_type-container-2{
+    display:flex;
+    flex-direction: row;
+    color:white;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:10px;
+}
+
+.Pokemon_type-container-2 span {
+    
+    justify-items: center;
+}
 
 .Pokemon_title {
     text-align: center;
     color: white;
+    padding:20px;
 }
 
 .Pokemon_type-container span {
@@ -115,11 +129,42 @@
     margin: 20px;
 }
 
+/* styles div progress */
+
 .pokemon_stats {
+    margin:20px;
+}
+.pokemon_stats-title{
+
     text-align: center;
     font-weight: bold;
-    font-size: 23px;
-    margin: 10px;
+    font-size: 28px;
+
+}
+
+.pokemon_stat-header {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pokemon_stat-bar {
+    width:100%;
+    margin:10px 0;
+}
+.pokemon_stat-barGray{
+    height:20px;
+    background-color: rgb(160, 144, 144);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+.pokemon_stat-barProgress{
+    height:20px;
+    background-color: rgb(255, 214, 81);
+    width:50%;
+    border-top-right-radius:5px;
+    border-bottom-right-radius: 5px;
 }
 
 .pokemon_type-stats {
